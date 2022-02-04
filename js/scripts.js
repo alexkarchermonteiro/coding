@@ -22,7 +22,6 @@ function searchItems(trending)
 
   httpReq.send();
 
-  alert(httpReq.response);
 
   var jsonData = JSON.parse(httpReq.responseText);
 
@@ -43,7 +42,6 @@ function trendingTags()
   if(token == null)
     var token = getToken();
   
-    alert("trending "+ token);
 
   var ul = document.getElementById("gifsUL");
   var httpReq = new XMLHttpRequest();
@@ -55,7 +53,6 @@ function trendingTags()
   httpReq.onreadystatechange = callbackFunction(httpReq);
   httpReq.send();
 
-  //alert(httpReq.responseText);
   var trendTags = httpReq.responseText.replace('\[', '').replace('\]');
   
   var li = document.createElement("li");
